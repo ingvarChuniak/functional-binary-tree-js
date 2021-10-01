@@ -1,5 +1,13 @@
 const { tree, emptyTree } = require("./index.js");
 const treeCounter = require("./treeCounter.js");
+const treeToObject = require("./treeToObject.js");
+
+const defaultValue = "Some Value";
+const root = tree(
+  defaultValue,
+  tree(defaultValue, emptyTree(), emptyTree()),
+  tree(defaultValue, emptyTree(), emptyTree())
+);
 
 describe("Tree", () => {
   it("To be function", () => {
@@ -15,12 +23,13 @@ describe("EmptyTree", () => {
 
 describe("Tree with two branches", () => {
   it("To have 3 values", () => {
-    const defaultValue = "Some Value";
-    const root = tree(
-      defaultValue,
-      tree(defaultValue, emptyTree(), emptyTree()),
-      tree(defaultValue, emptyTree(), emptyTree())
-    );
     expect(treeCounter(root)).toBe(3);
+  });
+});
+
+describe("Transform a tree to an object", () => {
+  it("To be an object", () => {
+    const obj = treeToObject(root);
+    expect(obj).toBeInstanceOf(Object);
   });
 });

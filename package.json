@@ -2,9 +2,10 @@
   "name": "binary-tree",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "tree.js",
   "scripts": {
-    "test": "jasmine ./spec"
+    "test": "jasmine ./spec",
+    "prettify": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/ingvarChuniak/functional-binary-tree-js#readme",
   "devDependencies": {
-    "jasmine": "^3.9.0"
+    "jasmine": "^3.9.0",
+    "prettier": "^2.4.1"
   }
 }
